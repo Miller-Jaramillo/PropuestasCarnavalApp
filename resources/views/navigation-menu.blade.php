@@ -41,6 +41,12 @@
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+
+                <div class="hidden mt-2 sm:flex sm:items-center sm:ml-6 dark:text-gray-100 text-gray-900"
+                style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <span style="margin-bottom: 0.1rem;" class="text-xs"> {{ Auth::user()->role_name }} </span>
+                <span class="text-sm">¡{{ Auth::user()->name }}!</span>
+            </div>
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
@@ -164,6 +170,23 @@
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            <x-responsive-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
+                {{ __('Usuarios') }}
+            </x-responsive-nav-link>
+
+            @role('participante')
+            <x-responsive-nav-link href="{{ route('propuestas-participante') }}" :active="request()->routeIs('propuestas-participante')">
+                {{ __('Propuestas') }}
+            </x-responsive-nav-link>
+            @endrole
+
+            @role('admin')
+            <x-responsive-nav-link href="{{ route('propuestas-admin') }}" :active="request()->routeIs('propuestas-admin')">
+                {{ __('Propuestas') }}
+            </x-responsive-nav-link>
+            @endrole
+
         </div>
 
         <!-- Responsive Settings Options -->
