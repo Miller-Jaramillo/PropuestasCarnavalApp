@@ -1,4 +1,4 @@
-<div>
+<div wire:poll.5000ms>
     <x-label
         class="flex justify-center mt-2 dark:text-emerald-500 font-semibold uppercase tracking-widest text-xs text-emerald-500 dark:text-green-500">
         Enviar nueva proppuesta
