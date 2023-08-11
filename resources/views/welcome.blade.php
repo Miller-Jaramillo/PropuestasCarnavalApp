@@ -83,7 +83,7 @@
 
                     <x-label
                         class="mt-10 text-center font-bold leading-9 text-md
-                    dark:text-gray-100  text-gray-100 tracking-widest uppercase">
+                    dark:text-gray-100  text-white tracking-widest uppercase">
                         Iniciar sesión en su cuenta</x-label>
 
 

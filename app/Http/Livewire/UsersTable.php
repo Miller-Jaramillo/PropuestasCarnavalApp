@@ -183,7 +183,7 @@ class UsersTable extends Component
             // -> Actualizar la lista de usuarios después de eliminar al usuario
             $this->render();
             $this->message = $user->name . ' se ha eliminado correctamente.';
-        } elseif ($currentUser->created_by === null) {
+        } elseif ($currentUser->role_name === 'Super Admin') {
             // -> El usuario actual se registró a través de la ruta principal y puede eliminar a cualquier usuario
             $user->delete();
             // -> Actualizar la lista de usuarios después de eliminar al usuario
@@ -208,6 +208,7 @@ class UsersTable extends Component
         $this->showUserInfo = true;
     }
 
+    
     public function closeUserInfo()
     {
         $this->showUserInfo = false;
@@ -229,7 +230,7 @@ class UsersTable extends Component
 
     public function enviarPropuesta()
     {
-      
+
         $this->emitTo('propuestas-participante', 'showFormPropuesta');
 
     }
