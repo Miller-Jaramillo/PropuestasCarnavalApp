@@ -287,13 +287,11 @@
                                                     @endrole
 
                                                     @role('participante')
-                                                        <a href="{{ route('propuesta-nueva') }}">
 
-                                                            <x-button
-                                                                class="dark:bg-green-500 bg-green-500 hover:bg-green-400 dark:hover:bg-green-400 ">
-                                                                Enviar Propuesta
-                                                            </x-button>
-                                                        </a>
+                                                    <x-button
+                                                    class="dark:bg-green-500 bg-green-500 hover:bg-green-400 dark:hover:bg-green-400 ">
+                                                    Enviar Propuesta
+                                                    </x-button>
                                                     @endrole
                                                 @endif
 

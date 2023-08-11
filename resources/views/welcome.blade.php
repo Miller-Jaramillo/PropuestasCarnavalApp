@@ -30,7 +30,7 @@
 
         <div class="relative isolate overflow-hidden bg-gray-900 sm:py-20">
             {{-- !! logo Ligth --}}
-            <img src="img/imagen3.png" alt=""
+            <img src="img/imagen1.png" alt=""
                 class="dark:hidden absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
 
             {{-- !! logo dark --}}
@@ -50,7 +50,22 @@
                 </div>
             </div>
 
-            
+
+
+            @if (Route::has('login'))
+                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                    @auth
+                        <a href="{{ url('/dashboard') }}"
+                            class="text-xs font-semibold leading-6 dark:text-gray-100  text-white tracking-widest uppercase
+                        font-semibold text-gray-600 hover:text-sky-600 dark:text-sky-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                    @endauth
+                </div>
+            @endif
+
+
+
+
+
             <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
                 <div class="sm:mx-auto sm:w-full sm:max-w-sm">
 
@@ -66,20 +81,29 @@
                         </button>
                     </div>
 
-                    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-100">
-                        Iniciar sesión en su cuenta</h2>
+                    <x-label
+                        class="mt-10 text-center font-bold leading-9 text-md
+                    dark:text-gray-100  text-gray-100 tracking-widest uppercase">
+                        Iniciar sesión en su cuenta</x-label>
+
+
                 </div>
 
-                <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
+                <div class="mt-3 sm:mx-auto sm:w-full sm:max-w-sm">
+                    <div class="flex justify-center">
+                        <x-validation-errors class="mb-4" />
+                    </div>
+
                     <form class="space-y-6" action="{{ route('login') }}" method="POST">
 
                         @csrf
                         <div>
-                            <x-label for="email" class="block text-sm font-medium leading-6 text-gray-100"
+                            <x-label for="email"
+                                class="text-xs font-semibold leading-6 dark:text-gray-100  text-white tracking-widest uppercase"
                                 value="{{ __('Correo electronico') }}" />
                             <div class="mt-2">
                                 <x-input id="email"
-                                    class="block w-full rounded-md border-0  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    class="block w-full font-semibold rounded-md border-0 tracking-widest   shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     type="email" name="email" :value="old('email')" required autofocus
                                     autocomplete="username" />
                             </div>
@@ -88,13 +112,14 @@
 
                         <div>
                             <div class="flex items-center justify-between">
-                                <x-label for="password" class="block text-sm font-medium leading-6 text-gray-100">
+                                <x-label for="password"
+                                    class="text-xs font-semibold leading-6 dark:text-gray-100  text-white tracking-widest uppercase">
                                     Contraseña
                                 </x-label>
                                 <div class="text-sm">
 
                                     @if (Route::has('password.request'))
-                                        <a class="underline text-sm text-indigo-300 dark:text-indigo-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+                                        <a class="underline tracking-widest  text-sm text-indigo-300 dark:text-indigo-400 hover:text-gray-100 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
                                             href="{{ route('password.request') }}">
                                             {{ __('Olvidaste tu contraseña?') }}
                                         </a>
@@ -116,7 +141,7 @@
                             <label for="remember_me" class="flex items-center">
                                 <x-checkbox id="remember_me" name="remember" />
                                 <span
-                                    class="ml-2 text-sm text-indigo-200 dark:text-indigo-200">{{ __('Acuérdate de mí') }}</span>
+                                    class="ml-2 text-sm tracking-widest dark:text-gray-400 text-gray-400">{{ __('Acuérdate de mí') }}</span>
                             </label>
                         </div>
 
@@ -127,19 +152,17 @@
                         </div>
                     </form>
 
-                    <p class="mt-10 text-center text-md text-gray-300">
-                        No tienes cuenta?
+                    <p class="mt-10 text-center text-md dark:text-gray-400 text-white tracking-widest">
+                        ¿No tienes cuenta?
                         <a href="{{ route('register-espectador.create') }}"
-                            class="font-semibold  leading-6 dark:text-indigo-600 text-indigo-300 hover:text-green-500 dark:hover:text-green-500">Registrate</a>
+                            class="font-bold uppercase  text-md tracking-widest leading-6 dark:text-indigo-600 text-sky-200 hover:text-green-500 dark:hover:text-green-500">Registrate</a>
                     </p>
                 </div>
+
+
             </div>
 
-
-
         </div>
-
-
 
 
     </div>

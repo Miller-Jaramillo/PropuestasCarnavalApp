@@ -13,6 +13,8 @@ use App\Mail\UsersCredentials;
 use App\Models\Propuesta;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
+use PhpParser\Builder\Function_;
+use PhpParser\Node\Expr\FuncCall;
 
 class UsersTable extends Component
 {
@@ -223,5 +225,12 @@ class UsersTable extends Component
     {
         // Redirigir a la ruta show-propuestas con el user_id
         return Redirect::route('show-propuestas', ['user_id' => $userId]);
+    }
+
+    public function enviarPropuesta()
+    {
+      
+        $this->emitTo('propuestas-participante', 'showFormPropuesta');
+
     }
 }
