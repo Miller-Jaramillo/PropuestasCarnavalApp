@@ -1,8 +1,8 @@
 <div wire:poll.5000ms>
-    <x-label class="flex justify-center mt-2 dark:text-yellow-500 font-semibold uppercase tracking-widest text-xs">
+    <x-label class="flex justify-center mt-2 dark:text-yellow-500  text-yellow-500 font-semibold uppercase tracking-widest text-xs">
         Propuestas en revision
     </x-label>
-
+    @if ($propuestas->count())
     @foreach ($propuestas as $propuesta)
         <div class="mt-2 max-w-7xl mx-auto sm:px-6 lg:px-40 px-4 sm:px-6">
             <div class=" max-w-7xl mx-auto sm:px-6 lg:px-20 px-4 sm:px-6  ">
@@ -241,6 +241,18 @@
             </div>
         </div>
     </div>
+
+    @else
+        <div
+            class="mt-5 text-center justify-between border-t dark:border-indigo-800 border-indigo-500 dark:bg-gray-900 bg-gray-100 dark:text-indigo-600 text-indigo-500 px-4 py-3 sm:px-6 tracking-widest">
+            No tienes propuestas pendientes de validación.
+        </div>
+
+    @endif
+
+
+
+
 
 
     <div>

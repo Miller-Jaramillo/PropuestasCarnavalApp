@@ -15,13 +15,9 @@
                             <div class=" pb-2 flex justify-end ">
 
 
-
-
                                 <label for="" class="text-yellow-500">
                                     {{ $propuesta->estado }}
                                 </label>
-
-
                             </div>
 
 
@@ -45,7 +41,7 @@
                                 </div>
                             </div>
 
-                            <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 text-center   gap-x-10  ">
+                            <div class="mt-5 grid grid-cols-3 sm:grid-cols-3 text-center   gap-x-10  ">
 
 
 

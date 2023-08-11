@@ -69,15 +69,24 @@ class FormPropuestaNueva extends Component
         return view('livewire.form-propuesta-nueva');
     }
 
+
     public function submitForm()
-    {
+{
+    $user = auth()->user();
+    $nombreUsuario = $user->name;
+    $identificacionUsuario = $user->identification_number;
 
-        $user = auth()->user();
-        $nombreUsuario = $user->name;
-        $identificaionUsuario = $user->identification_number;
-
-
-
+    // Verificar si hay algún campo vacío
+    if (
+        empty($this->nombre_propuesta) ||
+        empty($this->nombre_agrupacion) ||
+        empty($this->categoriaId) ||
+        empty($this->subcategoriaId) ||
+        empty($this->descripcion) ||
+        empty($this->file)
+    ) {
+        $this->message = "¡Debes completar todos los campos!";
+    } else {
         // Validación de campos
         $this->validate([
             'nombre_propuesta' => 'required',
@@ -88,13 +97,14 @@ class FormPropuestaNueva extends Component
             'file' => 'required|image|max:2048',
         ]);
 
-        // Crear una nueva instancia de Propuesta
+        $propuesta = new Propuesta();
+
         $propuesta = new Propuesta();
 
         $propuesta->nombre_propuesta = $this->nombre_propuesta;
         $propuesta->nombre = $nombreUsuario;
         $propuesta->apellido = "SIN APELLIDO";
-        $propuesta->identificacion = $identificaionUsuario;
+        $propuesta->identificacion = $identificacionUsuario;
 
         $propuesta->nombre_agrupacion = $this->nombre_agrupacion;
         $propuesta->descripcion = $this->descripcion;
@@ -120,6 +130,12 @@ class FormPropuestaNueva extends Component
         // Redirigir a la página de propuestas
         $this->emitTo('propuestas-participante', 'openFormPropuestasEnviadas');
     }
+}
+
+
+
+
+
 
     public function closeForm()
     {

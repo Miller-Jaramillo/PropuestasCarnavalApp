@@ -45,7 +45,7 @@
                                 </div>
                             </div>
 
-                            <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 text-center   gap-x-10  ">
+                            <div class="mt-5 grid grid-cols-3 sm:grid-cols-3 text-center   gap-x-10  ">
 
 
                                 <div class="">
@@ -157,7 +157,7 @@
 
     @else
     <div
-        class="mt-5 text-center justify-between border-t dark:border-indigo-800 border-indigo-500 dark:bg-gray-900 bg-gray-100 dark:text-indigo-800 text-indigo-500 px-4 py-3 sm:px-6 tracking-widest">
+        class="mt-5 text-center justify-between border-t dark:border-indigo-800 border-indigo-500 dark:bg-gray-900 bg-gray-100 dark:text-indigo-600 text-indigo-500 px-4 py-3 sm:px-6 tracking-widest">
         No tienes propuestas enviadas
     </div>
 @endif

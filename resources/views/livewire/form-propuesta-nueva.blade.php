@@ -1,6 +1,6 @@
 <div wire:poll.5000ms>
     <x-label
-        class="flex justify-center mt-2 dark:text-emerald-500 font-semibold uppercase tracking-widest text-xs text-emerald-500 dark:text-green-500">
+        class="flex justify-center mt-2 dark:text-emerald-500 font-semibold uppercase tracking-widest text-xs text-green-500 dark:text-green-500">
         Enviar nueva proppuesta
     </x-label>
     <div class="mt-5 max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 sm:px-6 pb-5">
