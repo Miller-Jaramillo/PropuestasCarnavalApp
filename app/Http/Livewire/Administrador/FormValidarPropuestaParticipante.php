@@ -46,6 +46,7 @@ class FormValidarPropuestaParticipante extends Component
             $user = $propuesta->user;
             $notificacion = new NotificacionPropuestaAprobada($user, $nombre_propuesta, $observacion); // Pasar la contraseña generada
             Mail::to($user->email)->send($notificacion);
+            $this-> resetInput();
         }
 
         $this->emitTo('administrador.propuestas-admin', 'openPropuestasAprobadas');
@@ -64,4 +65,10 @@ class FormValidarPropuestaParticipante extends Component
             $this->message = "¡La propuesta {$propuesta->nombre_prouesta} ha sido rechazada!";
         }
     }
+
+    public function resetInput()
+    {
+        $this-> observacion = "";
+    }
+
 }

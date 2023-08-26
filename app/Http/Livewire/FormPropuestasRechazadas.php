@@ -3,39 +3,30 @@
 namespace App\Http\Livewire;
 
 use App\Models\Propuesta;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use Livewire\Component;
 use Livewire\WithPagination;
 
-use Livewire\Component;
-
-class FormPropuestasEnviadas extends Component
+class FormPropuestasRechazadas extends Component
 {
+
     use WithPagination;
 
     public $perPage = '1';
 
-    public $message = "";
-
+    public $message;
 
 
     public function render()
     {
-        $user = Auth::user();
-
         $propuestas = Propuesta::with('user') // Cargar la relación con el usuario creador
+        ->where('estado', 'rechazada')
+        ->orderBy('updated_at', 'desc')
+        ->paginate($this->perPage);
 
-            ->where('user_id', $user->id)
-
-            ->where('estado', 'enviada')
-            ->orderBy('created_at', 'desc')
-            ->paginate($this->perPage);
-
-        return view('livewire.form-propuestas-enviadas', [
+        return view('livewire.form-propuestas-rechazadas',[
             'propuestas' => $propuestas,
         ]);
     }
-
 
     public function eliminarPropuesta($id)
     {
@@ -49,8 +40,4 @@ class FormPropuestasEnviadas extends Component
         // Actualizar la lista de propuestas
         $this->render();
     }
-
-
-
-
 }

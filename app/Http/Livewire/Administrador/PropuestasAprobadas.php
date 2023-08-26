@@ -13,6 +13,7 @@ class PropuestasAprobadas extends Component
 
     public $perPage = '1';
     public $propuestaId;
+    public $propuestasCount;
 
 
 
@@ -20,6 +21,11 @@ class PropuestasAprobadas extends Component
 
     public function render()
     {
+
+        $propuestasCount = Propuesta::where('estado', 'publicada')->count();
+        $this->propuestasCount = $propuestasCount;
+
+
         $propuestas = Propuesta::with('user') // Cargar la relación con el usuario creador
         ->where('estado', 'publicada')
         ->orderBy('updated_at', 'desc')

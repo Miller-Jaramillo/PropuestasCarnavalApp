@@ -1,7 +1,7 @@
 <div wire:poll.5000ms>
     <x-label
         class="flex justify-center mt-2 dark:text-blue-500 font-semibold uppercase tracking-widest text-xs text-green-500 dark:text-green-500">
-        Propuestas Aprobadas
+        {{ $propuestasCount }} Propuestas Aprobadas
     </x-label>
     @if ($propuestas->count())
     @foreach ($propuestas as $propuesta)

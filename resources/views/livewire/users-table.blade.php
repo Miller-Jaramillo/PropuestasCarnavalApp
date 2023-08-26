@@ -275,8 +275,8 @@
                                                     @endrole
                                                 @else
                                                     @role('admin')
-                                                        <x-button>
-                                                            Invitar
+                                                        <x-button wire:click="estadisticas">
+                                                            Estadisticas
                                                         </x-button>
                                                     @endrole
                                                     @role('espectador')
@@ -287,11 +287,10 @@
                                                     @endrole
 
                                                     @role('participante')
-
-                                                    <x-button
-                                                    class="dark:bg-green-500 bg-green-500 hover:bg-green-400 dark:hover:bg-green-400 ">
-                                                    Enviar Propuesta
-                                                    </x-button>
+                                                        <x-button wire:click="enviarPropuesta"
+                                                            class="dark:bg-green-500 bg-green-500 hover:bg-green-400 dark:hover:bg-green-400 ">
+                                                            Enviar Propuesta
+                                                        </x-button>
                                                     @endrole
                                                 @endif
 
@@ -383,8 +382,8 @@
                         <h2 class="text-lg font-semibold mb-4 text-center"> <b>Información del
                                 Usuario</b></h2>
                         <div class="flex items-center justify-center ">
-                            <img class="h-24 w-24 rounded-full object-cover"
-                                src="{{ $userInfo->profile_photo_url }}" alt="{{ $user->name }}">
+                            <img class="h-24 w-24 rounded-full object-cover" src="{{ $userInfo->profile_photo_url }}"
+                                alt="{{ $user->name }}">
                         </div>
 
                         <div class="mt-4">
@@ -396,15 +395,13 @@
                                 <p>Nombre: <b> {{ $userInfo->name }} </b></p>
                                 <p>Correo: {{ $userInfo->email }}</p>
                                 <p>Rol: {{ $userInfo->role_name }}</p>
-
                             @endif
                         </div>
 
                         <div class="flex justify-center">
                             @if ($userInfo->role_name == 'Participante')
-                            <button class="bg-red-500 text-white px-4 py-2 rounded mt-4"
-                            wire:click="verPropuestas({{ $userInfo->id }})">Ver Propuestas</button>
-
+                                <button class="bg-red-500 text-white px-4 py-2 rounded mt-4"
+                                    wire:click="verPropuestas({{ $userInfo->id }})">Ver Propuestas</button>
                             @endif
                         </div>
                     </div>
@@ -412,6 +409,73 @@
             @endif
 
         </div>
+
+
+
+
+        <div class="flex items-center">
+            {{-- !! MOSTRAR INFORMACION --}}
+            @if ($openEstadisticas)
+                <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75">
+
+                    <div
+                        class="bg-white dark:bg-gray-800 dark:text-gray-100 text-gray-900 p-6 rounded-lg shadow-xl border-2 border-indigo-500 dark:border-indigo-800">
+                        <div class="flex justify-center">
+                            <button wire:click="closeUserInfo" class="shadow-sm ml-3 block icon-red  ">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+
+                            </button>
+                        </div>
+
+                        <x-label
+                            class="text-sm font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase ">
+                            <b>Estadisticas de registro</b>
+                        </x-label>
+
+                        <div class="mt-2">
+
+                            <div>
+                                <x-label
+                                    class="text-sm font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest ">
+                                    Total de usuarios: {{ $totalUsers }}
+                                </x-label>
+                            </div>
+
+                            <div>
+                                <x-label
+                                    class="text-sm font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest ">
+                                    Total de administradores: {{ $adminCount }}
+                                </x-label>
+                            </div>
+
+                            <div>
+                                <x-label
+                                    class="text-sm font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest ">
+                                    Total de espectadores: {{ $espectadorCount }}
+                                </x-label>
+                            </div>
+
+                            <div>
+                                <x-label
+                                    class="text-sm font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest ">
+                                    Total de participantes: {{ $participanteCount }}
+                                </x-label>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            @endif
+
+        </div>
+
+
+
 
 
         <!--  Formulario Particiante  -->

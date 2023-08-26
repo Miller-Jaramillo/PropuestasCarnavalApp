@@ -41,6 +41,11 @@ class UsersTable extends Component
     public $participate;
     public $showPropuestas;
     public $userToShowPropuestas;
+    public $openEstadisticas;
+    public  $totalUsers;
+    public $adminCount;
+    public $espectadorCount;
+    public $participanteCount;
 
     // cmt: Se seleciona el usuario para filtrar la busqueda por rol
     public function updatedSelectedOption($value)
@@ -116,7 +121,6 @@ class UsersTable extends Component
     public function submitForm()
     {
         // -> Lógica para procesar el formulario y guardar el administrador en la base de datos
-
         $validatedData = $this->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|unique:users',
@@ -140,7 +144,6 @@ class UsersTable extends Component
         $user->role_id = $role->id;
         $user->role_name = 'Administrador';
         $user->created_by = Auth::user()->id;
-
         $user->assignRole($role);
 
         // Envío del correo electrónico con las credenciales
@@ -148,7 +151,7 @@ class UsersTable extends Component
         $this->closeForm();
         $user->save();
 
-        $this->message = "¡El usuario {$user->name} ha sido agregado!";
+        $this->message = "¡El usuario {$user->name} ha sido registrado!";
 
         // -> Después de guardar, puedes cerrar la vista flotante
     }
@@ -217,6 +220,7 @@ class UsersTable extends Component
     {
         $this->showUserInfo = false;
         $this->userInfo = null;
+        $this->openEstadisticas = false;
     }
 
     public function redirectToPropuestas()
@@ -235,7 +239,27 @@ class UsersTable extends Component
     public function enviarPropuesta()
     {
 
-        $this->emitTo('propuestas-participante', 'showFormPropuesta');
+        return Redirect::route('registrar-propuesta');
+
+    }
+
+    public function estadisticas()
+    {
+
+        $totalUsers = User::count();
+        $adminCount = User::where('role_id', 1)->count();
+        $espectadorCount = User::where('role_id', 2)->count();
+        $participanteCount = User::where('role_id', 3)->count();
+
+        // Puedes utilizar estas variables para mostrar las estadísticas o realizar otras operaciones
+
+        // Por ejemplo, puedes asignar estas variables a propiedades de tu componente para mostrarlas en la vista
+        $this->totalUsers = $totalUsers;
+        $this->adminCount = $adminCount;
+        $this->espectadorCount = $espectadorCount;
+        $this->participanteCount = $participanteCount;
+
+        $this->openEstadisticas = true;
 
     }
 }

@@ -124,12 +124,25 @@ class FormPropuestaNueva extends Component
 
         // Guardar la propuesta en la base de datos
         $propuesta->save();
+        $this->resetInputs();
 
         $this->message = "¡La propuesta {$propuesta->nombre_prouesta} ha sido enviada!";
 
         // Redirigir a la página de propuestas
         $this->emitTo('propuestas-participante', 'openFormPropuestasEnviadas');
     }
+
+
+}
+
+private function resetInputs()
+{
+    $this->nombre_propuesta = "";
+    $this->nombre_agrupacion = "";
+    $this->categoriaId = "";
+    $this->subcategoriaId = "";
+    $this->descripcion = "";
+    $this->file = null;
 }
 
 

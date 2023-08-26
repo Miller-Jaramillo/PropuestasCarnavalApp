@@ -55,22 +55,19 @@ Route::middleware([
     Route::get('/users', UsersTable::class)->name('users');  // --> Navegation users - table
     Route::post('/register-participante', [ParticipanteRegisterController::class, 'store'])->name('register-participante.store');
     Route::get('/propuestas-participante', PropuestasParticipante::class)->name('propuestas-participante');
-    Route::get('/propuesta-nueva', FormPropuestaNueva::class)->name('propuesta-nueva');
+
+    Route::get('/registrar-propuesta', FormPropuestaNueva::class)->name('registrar-propuesta');
+    //Route::post('/registrar-propuesta', FormPropuestaNueva::class, 'submitForm')->name('registrar-propuesta.submitForm');
+
+
+
     Route::get('/propuestas-aprobadas', FormPropuestasAprobadas::class)->name('propuestas-aprobadas');
     Route::get('/propuestas-enviadas', FormPropuestasEnviadas::class)->name('propuestas-enviadas');
-
-
     Route::get('/propuestas-admin', PropuestasAdmin::class)->name('propuestas-admin');
     Route::get('/propuestas-revision', FormValidarPropuestaParticipante::class)->name('propuestas-revision');
     Route::get('/dashboard', PropuestasPublicadas::class)->name('dashboard');
-
-
     Route::get('/show-propuestas/{user_id}', ShowPropuestas::class)
     ->name('show-propuestas');
-
-
-
-
 
 });
 

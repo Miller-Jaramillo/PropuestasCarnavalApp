@@ -33,10 +33,10 @@
 
                                 <div>
                                     <div class="mt-1">
-                                        <p
-                                            class="text-lg font-semibold leading-6 dark:text-gray-100  text-gray-900 flex justify-center  ">
-                                            {{ $propuesta->nombre_propuesta }}
-                                        </p>
+                                        <x-label
+                                        class="text-lg font-semibold tracking-widest leading-6 dark:text-gray-200  text-gray-900 flex justify-center uppercase  ">
+                                        {{ $propuesta->nombre_propuesta }}
+                                    </x-label>
                                     </div>
                                 </div>
                             </div>

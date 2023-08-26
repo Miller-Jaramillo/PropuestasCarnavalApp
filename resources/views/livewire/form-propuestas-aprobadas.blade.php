@@ -363,14 +363,13 @@
                                 </select>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     @else
         <div
-            class="mt-5 text-center justify-between border-t dark:border-indigo-800 border-indigo-500 dark:bg-gray-900 bg-gray-100 dark:text-indigo-600 text-indigo-500 px-4 py-3 sm:px-6 tracking-widest">
+            class="mt-5 text-center justify-between  dark:bg-gray-900 bg-gray-100 dark:text-indigo-600 text-indigo-500 px-4 py-3 sm:px-6 tracking-widest">
             No tienes propuestas aprobadas
         </div>
     @endif
