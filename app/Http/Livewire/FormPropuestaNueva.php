@@ -104,7 +104,7 @@ class FormPropuestaNueva extends Component
         $propuesta->nombre_propuesta = $this->nombre_propuesta;
         $propuesta->nombre = $nombreUsuario;
         $propuesta->apellido = "SIN APELLIDO";
-        $propuesta->identificacion = $identificacionUsuario;
+        $propuesta->identificacion = '100234322';
 
         $propuesta->nombre_agrupacion = $this->nombre_agrupacion;
         $propuesta->descripcion = $this->descripcion;
@@ -124,7 +124,7 @@ class FormPropuestaNueva extends Component
 
         // Guardar la propuesta en la base de datos
         $propuesta->save();
-       
+
 
         $this->message = "¡La propuesta {$propuesta->nombre_prouesta} ha sido enviada!";
 
