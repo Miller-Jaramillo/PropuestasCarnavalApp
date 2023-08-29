@@ -104,7 +104,7 @@ class FormPropuestaNueva extends Component
         $propuesta->nombre_propuesta = $this->nombre_propuesta;
         $propuesta->nombre = $nombreUsuario;
         $propuesta->apellido = "SIN APELLIDO";
-        $propuesta->identificacion = '100234322';
+        $propuesta->identificacion = $identificacionUsuario;
 
         $propuesta->nombre_agrupacion = $this->nombre_agrupacion;
         $propuesta->descripcion = $this->descripcion;
