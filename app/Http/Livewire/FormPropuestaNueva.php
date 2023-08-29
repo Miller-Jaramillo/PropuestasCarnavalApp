@@ -124,6 +124,8 @@ class FormPropuestaNueva extends Component
 
         // Guardar la propuesta en la base de datos
         $propuesta->save();
+        //resetear los campos
+        $this->resetInputs();
 
 
         $this->message = "¡La propuesta {$propuesta->nombre_prouesta} ha sido enviada!";
