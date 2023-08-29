@@ -97,7 +97,7 @@ class FormPropuestaNueva extends Component
             'file' => 'required|image|max:2048',
         ]);
 
-        $propuesta = new Propuesta();
+
 
         $propuesta = new Propuesta();
 
@@ -124,7 +124,7 @@ class FormPropuestaNueva extends Component
 
         // Guardar la propuesta en la base de datos
         $propuesta->save();
-        $this->resetInputs();
+       
 
         $this->message = "¡La propuesta {$propuesta->nombre_prouesta} ha sido enviada!";
 
