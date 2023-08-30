@@ -265,19 +265,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
                             @if ($propuesta->comments != null)
                                 <div class="mt-4 pb-2">
                                     <x-label
-                                        class="block text-sm font-medium leading-6 text-gray-200 dark:text-gray-700 tracking-widest">
+                                        class="block text-xs font-medium leading-6 text-gray-200 dark:text-gray-700 tracking-widest">
                                         Comentarios
                                     </x-label>
 
@@ -319,6 +310,16 @@
                                                     @endif
                                                 </div>
                                             </div>
+
+                                            <div class="flex">
+                                                <label
+                                                    class="ml-2 font-medium leading-6 text-gray-400 dark:text-gray-700 tracking-widest"
+                                                    style="font-size: 8px;">
+                                                    {{ $comentario->created_at }}
+                                                </label>
+
+                                            </div>
+
                                         </div>
                                     @endforeach
 
@@ -368,6 +369,16 @@
                                                                 @endif
                                                             </div>
                                                         </div>
+
+                                                        <div class="flex">
+
+                                                            <label
+                                                                class="ml-2 block font-medium leading-6 text-gray-400 dark:text-gray-700 tracking-widest"
+                                                                style="font-size: 8px;">
+                                                                {{ $comentario->created_at }}
+                                                            </label>
+
+                                                        </div>
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -375,13 +386,6 @@
                                     @endif
                                 </div>
                             @endif
-
-
-
-
-
-
-
 
                         </div>
                     </div>
