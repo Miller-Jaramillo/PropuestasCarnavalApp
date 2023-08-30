@@ -284,7 +284,7 @@
                                                 class="bg-white dark:bg-gray-900 overflow-hidden shadow-xl sm:rounded-lg rounded-md pb-2">
                                                 <div class="mt-2 grid grid-cols-10 sm:grid-cols-10 ">
                                                     <div class="col-span-1 flex justify-center">
-                                                        <img class="h-8 w-8 rounded-full object-cover "
+                                                        <img class="h-6 w-6 rounded-full object-cover "
                                                             src="{{ $comentario->user->profile_photo_url }}"
                                                             alt="{{ $comentario->user->name }}" />
                                                     </div>
@@ -313,7 +313,7 @@
 
                                             <div class="flex">
                                                 <label
-                                                    class="ml-2 font-medium leading-6 text-gray-400 dark:text-gray-700 tracking-widest"
+                                                    class="ml-1 font-medium leading-6 text-gray-400 dark:text-gray-700 tracking-widest"
                                                     style="font-size: 8px;">
                                                     {{ $comentario->created_at }}
                                                 </label>
@@ -373,7 +373,7 @@
                                                         <div class="flex">
 
                                                             <label
-                                                                class="ml-2 block font-medium leading-6 text-gray-400 dark:text-gray-700 tracking-widest"
+                                                                class="ml-1 block font-medium leading-6 text-gray-400 dark:text-gray-700 tracking-widest"
                                                                 style="font-size: 8px;">
                                                                 {{ $comentario->created_at }}
                                                             </label>
@@ -386,6 +386,12 @@
                                     @endif
                                 </div>
                             @endif
+
+
+
+
+
+
 
                         </div>
                     </div>
