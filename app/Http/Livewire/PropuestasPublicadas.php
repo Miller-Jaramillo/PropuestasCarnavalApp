@@ -20,6 +20,8 @@ class PropuestasPublicadas extends Component
 
     public $likes = [];
 
+    public $visibleComments = 2;
+
     public function render()
     {
         $propuestas = Propuesta::with('user', 'comentarios.user') // Cargar la relación con el usuario creador
@@ -143,5 +145,10 @@ class PropuestasPublicadas extends Component
     public function resetInputs()
     {
         $this->contenidoComentario = '';
+    }
+
+    public function showMoreComments()
+    {
+        $this->visibleComments = count($this->propuesta->comentarios); // Mostrar todos los comentarios
     }
 }

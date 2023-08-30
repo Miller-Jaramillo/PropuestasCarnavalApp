@@ -12,6 +12,7 @@ class PropuestasRechazadas extends Component
     use WithPagination;
 
     public $perPage = '1';
+    public $message;
 
 
     public function render()
@@ -24,5 +25,18 @@ class PropuestasRechazadas extends Component
         return view('livewire.administrador.propuestas-rechazadas',[
             'propuestas' => $propuestas,
         ]);
+    }
+
+    public function eliminarPropuesta($id)
+    {
+        $propuesta = Propuesta::find($id);
+
+        if ($propuesta) {
+            $propuesta->delete();
+            $this->message = "¡La propuesta ha sido eliminada!";
+        }
+
+        // Actualizar la lista de propuestas
+        $this->render();
     }
 }

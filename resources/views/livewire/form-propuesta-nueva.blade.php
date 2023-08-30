@@ -137,8 +137,7 @@
                                 <div class="mt-4 ">
                                     <x-label for="cover-photo"
                                         class="text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase">
-                                        Foto o
-                                        Video</x-label>
+                                        Foto</x-label>
 
 
                                     @if ($file)

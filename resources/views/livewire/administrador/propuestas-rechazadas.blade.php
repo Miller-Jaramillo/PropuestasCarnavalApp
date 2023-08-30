@@ -172,6 +172,13 @@
                                 @endif
 
 
+                                <div class="mt-2  pb-5 flex justify-end">
+                                    <x-button wire:click="eliminarPropuesta({{ $propuesta->id }})"
+                                        class="bg-red-500 dark:bg-red-500 tracking-widest">
+                                        {{ __('Eliminar') }}
+                                    </x-button>
+                                </div>
+
 
                             </div>
 
@@ -217,5 +224,16 @@
 
     @endif
 
+    <div>
+        @if ($message)
+            <div x-data="{ show: @entangle('message') }" x-show="show" x-init="setTimeout(() => { show = false; }, 2000)"
+                class="fixed inset-0 flex items-center justify-center">
+                <div class="bg-white dark:bg-gray-200 text-gray-700 py-2 px-4 rounded-lg text-center">
+                    {!! $message !!}
+                </div>
+            </div>
+        @endif
+    </div>
+    @livewireScripts
 
 </div>

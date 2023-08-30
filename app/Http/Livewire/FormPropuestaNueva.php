@@ -144,6 +144,7 @@ private function resetInputs()
     $this->categoriaId = "";
     $this->subcategoriaId = "";
     $this->descripcion = "";
+    $this->preview = null;
     $this->file = null;
 }
 
