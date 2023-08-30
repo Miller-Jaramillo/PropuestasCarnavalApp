@@ -137,10 +137,6 @@
 
 
                             <div class="mt-4 ">
-                                <x-label for="cover-photo"
-                                    class="block text-sm font-medium leading-6 text-gray-200 dark:text-gray-700 tracking-widest">
-                                    Foto o
-                                    Video</x-label>
                                 <div
                                     class="mt-2 flex justify-center sm:rounded-lg rounded-md dark:bg-gray-900  border border-dashed border-indigo-900/25 dark:border-indigo-100/25 px-6 py-10">
                                     <div class="text-center">
@@ -284,7 +280,7 @@
                                                 class="bg-white dark:bg-gray-900 overflow-hidden shadow-xl sm:rounded-lg rounded-md pb-2">
                                                 <div class="mt-2 grid grid-cols-10 sm:grid-cols-10 ">
                                                     <div class="col-span-1 flex justify-center">
-                                                        <img class="h-6 w-6 rounded-full object-cover "
+                                                        <img class="h-8 w-8 rounded-full object-cover "
                                                             src="{{ $comentario->user->profile_photo_url }}"
                                                             alt="{{ $comentario->user->name }}" />
                                                     </div>
@@ -370,7 +366,7 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="flex">
+                                                        <div class="flex ">
 
                                                             <label
                                                                 class="ml-1 block font-medium leading-6 text-gray-400 dark:text-gray-700 tracking-widest"
