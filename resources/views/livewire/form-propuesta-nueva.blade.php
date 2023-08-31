@@ -1,4 +1,11 @@
 <div wire:poll.5000ms>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight ">
+            {{ __('Registrar propuesta') }}
+        </h2>
+    </x-slot>
+
+
     <x-label
         class="flex justify-center mt-2 dark:text-emerald-500 font-semibold uppercase tracking-widest text-xs text-green-500 dark:text-green-500">
         Enviar nueva propuesta

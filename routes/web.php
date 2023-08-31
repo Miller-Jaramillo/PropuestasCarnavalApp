@@ -5,7 +5,7 @@ use App\Http\Controllers\EspectadorRegisterController;
 use App\Http\Controllers\ParticipanteRegisterController;
 use App\Http\Controllers\PropuestasAprobadasController;
 use App\Http\Livewire\Administrador\FormValidarPropuestaParticipante;
-use App\Http\Livewire\CategoriasComponent;
+use App\Http\Livewire\Administrador\CategoriasComponent;
 use App\Http\Livewire\FormPropuestaNueva;
 use App\Http\Livewire\FormPropuestasAprobadas;
 use App\Http\Livewire\FormPropuestasEnviadas;
@@ -68,6 +68,8 @@ Route::middleware([
     Route::get('/dashboard', PropuestasPublicadas::class)->name('dashboard');
     Route::get('/show-propuestas/{user_id}', ShowPropuestas::class)
     ->name('show-propuestas');
+
+    Route::get('/ajustar-categorias', CategoriasComponent::class)->name('ajustar-categorias');
 
 });
 

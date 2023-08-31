@@ -269,7 +269,7 @@
                                     </x-label>
 
                                     @php
-                                        $visibleComments = 2;
+                                        $visibleComments = 1;
                                         $totalComments = count($propuesta->comentarios);
                                         $startIdx = max($totalComments - $visibleComments, 0);
                                     @endphp
@@ -382,13 +382,6 @@
                                     @endif
                                 </div>
                             @endif
-
-
-
-
-
-
-
                         </div>
                     </div>
                 </div>

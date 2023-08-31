@@ -75,7 +75,7 @@ class PropuestasAdmin extends Component
         $this-> openPropuestasRechazadas= false;
      }
 
-     protected $listeners = ['openFormPropuestasRevicion', 'openPropuestasAprobadas'];
+     protected $listeners = ['openFormPropuestasRevicion', 'openPropuestasAprobadas', 'openPropuestasRechazadas'];
      public function openFormPropuestasRevicion()
      {
         $this-> openFormPropuestasRevicion = true;
