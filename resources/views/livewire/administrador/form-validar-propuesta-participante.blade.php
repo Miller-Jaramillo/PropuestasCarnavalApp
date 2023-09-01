@@ -16,29 +16,29 @@
                     bg-indigo-50 dark:bg-gray-900 text-gray-500 dark:border-indigo-900 border-indigo-200 "
                             type="text" placeholder="Buscar">
 
-                            @if ($search != '' || $categoriaId != '' )
-                                <button wire:click="clear"
-                                    class="bg-gray-100 sm:bg-gray-100 dark:bg-gray-900 sm:dark:bg-gray-900  dark:text-gray-500 text-gray-500
+                        @if ($search != '' || $categoriaId != '')
+                            <button wire:click="clear"
+                                class="bg-gray-100 sm:bg-gray-100 dark:bg-gray-900 sm:dark:bg-gray-900  dark:text-gray-500 text-gray-500
                                         sm:form-input border-none
                                         sm:rounded-md shadow-sm ml-1 icon-red sm:flex flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                        class="w-6 h-6">
-                                        <path fill-rule="evenodd"
-                                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                            @endif
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="w-6 h-6">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        @endif
 
-                            <div class="hidden sm:block  rounded-md shadow-sm  ml-2 flex justify-center  ">
-                                <select wire:model="categoriaId" id="categoria"
-                                    class="dark:border-indigo-900 border-indigo-200 outline-none bg-indigo-50 text-gray-500 text-sm rounded-md dark:bg-gray-900 ">
-                                    <option value="">Buscar por categoría</option>
-                                    @foreach ($categorias as $categoria)
-                                        <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+                        <div class="hidden sm:block  rounded-md shadow-sm  ml-2 flex justify-center  ">
+                            <select wire:model="categoriaId" id="categoria"
+                                class="dark:border-indigo-900 border-indigo-200 outline-none bg-indigo-50 text-gray-500 text-sm rounded-md dark:bg-gray-900 ">
+                                <option value="">Buscar por categoría</option>
+                                @foreach ($categorias as $categoria)
+                                    <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
                         <div class="rounded-md shadow-sm  ml-2 flex justify-center  ">
                             <select wire:model="perPage"
@@ -144,6 +144,16 @@
                                                         clip-rule="evenodd" />
                                                 </svg>
                                             </a>
+                                            <a href="#"
+                                                wire:click="confirmEliminarPropuesta({{ $propuesta->id }})"
+                                                class="red-hover icon-red">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                    fill="currentColor" class="w-10 h-6">
+                                                    <path fill-rule="evenodd"
+                                                        d="M8.75 1A2.75 2.75 0 006 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 10.23 1.482l.149-.022.841 10.518A2.75 2.75 0 007.596 19h4.807a2.75 2.75 0 002.742-2.53l.841-10.52.149.023a.75.75 0 00.23-1.482A41.03 41.03 0 0014 4.193V3.75A2.75 2.75 0 0011.25 1h-2.5zM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4zM8.58 7.72a.75.75 0 00-1.5.06l.3 7.5a.75.75 0 101.5-.06l-.3-7.5zm4.34.06a.75.75 0 10-1.5-.06l-.3 7.5a.75.75 0 101.5.06l.3-7.5z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </a>
                                         </div>
                                     </td>
                                 </tr>
@@ -184,10 +194,10 @@
                 <div class="mt-2 max-w-7xl mx-auto sm:px-6 lg:px-40 px-4 sm:px-6">
 
                     <div class=" max-w-7xl mx-auto sm:px-6 lg:px-20 px-4 sm:px-6  ">
-                        <div class="flex justify-center">
-                            <button wire:click="closeShowPropuesta" class="shadow-sm ml-3 block icon-red  ">
+                        <div class="flex justify-center pb-2">
+                            <button wire:click="closeShowPropuesta" class="shadow-sm block icon-red  ">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -367,15 +377,38 @@
             </div>
         @endif
     </div>
+
+    @if ($confirmEliminarPropuesta)
+        <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75">
+            <div
+                class="bg-white dark:bg-gray-800 dark:text-white text-gray-900 p-6 rounded-lg shadow-xl border-2 border-blue-500">
+                <p>¿Estás seguro de eliminar la propuesta {{ $nombrePropuesta }}?</p>
+                <div class="mt-4 flex justify-end">
+                    <button wire:click="eliminarPropuesta({{ $confirmEliminarPropuesta }})"
+                        class="px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-md hover:bg-red-600">
+                        Sí, eliminar
+                    </button>
+                    <button wire:click="cancelEliminarPropuesta"
+                        class="px-4 py-2 ml-4 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    @endif
+
+
+
+
+    <style>
+        /* styles.css */
+        .modal-content {
+            max-height: 80vh;
+            /* Altura máxima del 80% del viewport height */
+            overflow-y: auto;
+            /* Habilita el scroll vertical si el contenido excede la altura máxima */
+        }
+    </style>
+
+
 </div>
-
-
-<style>
-    /* styles.css */
-    .modal-content {
-        max-height: 80vh;
-        /* Altura máxima del 80% del viewport height */
-        overflow-y: auto;
-        /* Habilita el scroll vertical si el contenido excede la altura máxima */
-    }
-</style>

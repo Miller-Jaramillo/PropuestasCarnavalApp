@@ -15,17 +15,15 @@ class PropuestasAprobadas extends Component
     public $perPage = '5';
     public $propuestaId;
     public $propuestasCount;
-
     public $message = '';
     public $showPropuestaInfo;
     public $propuestaInfo;
     public $search = '';
     public $categoriaId;
     public $categorias;
-
     public $likes = [];
-
-    public $visibleComments = 2;
+    public $confirmEliminarPropuesta;
+    public $nombrePropuesta;
 
 
 
@@ -99,5 +97,33 @@ class PropuestasAprobadas extends Component
         $this->categoriaId = "";
     }
 
+
+     // cmt: Se confirma la desicion de eliminar el usuario
+     public function confirmEliminarPropuesta($userId)
+     {
+         $this->confirmEliminarPropuesta = $userId;
+         $propuesta = Propuesta::find($userId);
+         $this->nombrePropuesta = $propuesta->nombre_propuesta;
+     }
+     // cmt: Se cancela la desicion de eliminar el usuario
+     public function cancelEliminarPropuesta()
+     {
+         $this->confirmEliminarPropuesta = null;
+     }
+
+
+
+    public function eliminarPropuesta($id)
+    {
+        $propuesta = Propuesta::find($id);
+
+        if ($propuesta) {
+            $propuesta->delete();
+            $this->message = "¡La propuesta ha sido eliminada!";
+            $this->confirmEliminarPropuesta = null;
+            $this->closeShowPropuesta();
+
+        }
+    }
 
 }

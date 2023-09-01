@@ -10,14 +10,7 @@
 
     <div class="py-5">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 sm:px-6">
-
-
-
             <div class="flex justify-center mt-1 ">
-
-
-
-
 
                 {{-- --> icono nuevas propuestas  --}}
                 <div class="col-span-1">
@@ -25,7 +18,7 @@
                         class="inline-flex items-center px-4 py-2
                         hover:bg-gray-700 dark:hover:bg-gray-400
                         bg-white dark:bg-gray-800 dark:sm:bg-gray-800 shadow-sm  mr-3  icon-blue "
-                        title="Prouestas recibidas">
+                        title="Propuestas recibidas">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path fill-rule="evenodd"
                                 d="M7.502 6h7.128A3.375 3.375 0 0118 9.375v9.375a3 3 0 003-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 00-.673-.05A3 3 0 0015 1.5h-1.5a3 3 0 00-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6zM13.5 3A1.5 1.5 0 0012 4.5h4.5A1.5 1.5 0 0015 3h-1.5z"

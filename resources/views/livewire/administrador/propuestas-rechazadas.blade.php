@@ -195,10 +195,10 @@
             <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75">
                 <div class="mt-2 max-w-7xl mx-auto sm:px-6 lg:px-40 px-4 sm:px-6">
                     <div class=" max-w-7xl mx-auto sm:px-6 lg:px-20 px-4 sm:px-6  ">
-                        <div class="flex justify-center">
-                            <button wire:click="closeShowPropuesta" class="shadow-sm ml-3 block icon-red  ">
+                        <div class="flex justify-center pb-2">
+                            <button wire:click="closeShowPropuesta" class="shadow-sm block icon-red  ">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -363,7 +363,7 @@
         <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75">
             <div
                 class="bg-white dark:bg-gray-800 dark:text-white text-gray-900 p-6 rounded-lg shadow-xl border-2 border-blue-500">
-                <p>¿Estás seguro de eliminar a {{ $nombrePropuesta }}?</p>
+                <p>¿Estás seguro de eliminar la propuesta {{ $nombrePropuesta }}?</p>
                 <div class="mt-4 flex justify-end">
                     <button wire:click="eliminarPropuesta({{ $confirmEliminarPropuesta }})"
                         class="px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-md hover:bg-red-600">

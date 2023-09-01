@@ -20,6 +20,8 @@ class PropuestasRecibidas extends Component
     public $search = '';
     public $categoriaId;
     public $categorias;
+    public $confirmEliminarPropuesta;
+    public $nombrePropuesta;
 
 
     public function updatedCategoriaId()
@@ -102,4 +104,37 @@ class PropuestasRecibidas extends Component
         $this->perPage = 5;
         $this->categoriaId = "";
     }
+
+
+     // cmt: Se confirma la desicion de eliminar el usuario
+     public function confirmEliminarPropuesta($userId)
+     {
+         $this->confirmEliminarPropuesta = $userId;
+         $propuesta = Propuesta::find($userId);
+         $this->nombrePropuesta = $propuesta->nombre_propuesta;
+     }
+     // cmt: Se cancela la desicion de eliminar el usuario
+     public function cancelEliminarPropuesta()
+     {
+         $this->confirmEliminarPropuesta = null;
+     }
+
+
+
+    public function eliminarPropuesta($id)
+    {
+        $propuesta = Propuesta::find($id);
+
+        if ($propuesta) {
+            $propuesta->delete();
+            $this->message = "¡La propuesta ha sido eliminada!";
+            $this->confirmEliminarPropuesta = null;
+            $this->closeShowPropuesta();
+
+        }
+
+    }
+
+
+
 }

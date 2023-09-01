@@ -78,7 +78,7 @@ class PropuestasRechazadas extends Component
      {
          $this->confirmEliminarPropuesta = $userId;
          $propuesta = Propuesta::find($userId);
-         $this->nombrePropuesta = $propuesta->nombrePropuesta;
+         $this->nombrePropuesta = $propuesta->nombre_propuesta;
      }
      // cmt: Se cancela la desicion de eliminar el usuario
      public function cancelEliminarPropuesta()
@@ -95,18 +95,11 @@ class PropuestasRechazadas extends Component
         if ($propuesta) {
             $propuesta->delete();
             $this->message = "¡La propuesta ha sido eliminada!";
-            $this->showPropuestaInfo = false;
+            $this->closeShowPropuesta();
             $this->confirmEliminarPropuesta = null;
 
         }
-
-        $this->emitTo('administrador.propuestas-admin', 'openPropuestasRechazadas');
-        // Actualizar la lista de propuestas
-
     }
-
-
-
 
 
     public function showPropuesta($propuestaId)
