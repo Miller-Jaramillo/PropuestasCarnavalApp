@@ -11,8 +11,6 @@
 
             <div class="flex justify-center mt-1 pb-3">
 
-
-
                 <div>
                     <x-button wire:click="openFormNuevaPropuesta"
                         class="inline-flex items-center px-4 py-2
