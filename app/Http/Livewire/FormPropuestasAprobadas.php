@@ -12,7 +12,7 @@ class FormPropuestasAprobadas extends Component
 {
 
     use WithPagination;
-    public $perPage = '5';
+    public $perPage = '50';
     public $comentar;
 
     public $propuestaId;

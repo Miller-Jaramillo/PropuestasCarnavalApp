@@ -96,14 +96,7 @@
 
 
     @if ($showFormPropuestasEnviadas)
-    <x-label
-    class="flex justify-center mt-2 font-semibold uppercase tracking-widest text-xs text-sky-500 dark:text-sky-500">
-    Propuestas enviadas
-</x-label>
-    <livewire:propuestas-en-revision> </livewire:propuestas-en-revision>
         <livewire:form-propuestas-enviadas> </livewire:form-propuestas-enviadas>
-        <livewire:form-propuestas-rechazadas> </livewire:form-propuestas-rechazadas>
-
     @endif
 
 

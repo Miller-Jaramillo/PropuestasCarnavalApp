@@ -191,17 +191,6 @@
                                 <div
                                     class="flex justify-center mt-2 border-b dark:border-b-indigo-600 border-b-indigo-600  ">
 
-
-                                    <script>
-                                        module.exports = {
-                                            // ... otras configuraciones ...
-
-                                            darkMode: 'class', // Esto es importante para el modo oscuro
-                                        };
-                                    </script>
-
-
-
                                     <div wire:key="{{ $propuesta->id }}">
                                         <!-- ... contenido de la propuesta ... -->
 
@@ -210,19 +199,6 @@
                                             Me Gusta
                                         </x-label>
                                     </div>
-
-
-
-                                    <label class="ml-1">
-                                        |
-                                    </label>
-
-                                    <x-label
-                                        class="ml-1 text-sm font-semibold leading-7 uppercase tracking-wider cursor-pointer {{ in_array($propuesta->id, $likes) ? 'text-red-400' : 'text-yellow-400' }} dark:{{ in_array($propuesta->id, $likes) ? 'text-red-400' : 'text-yellow-400' }}">
-                                        COMENTAR
-                                    </x-label>
-
-
                                 </div>
 
                                 {{-- @if ($comentar) --}}
@@ -232,14 +208,12 @@
                                         <img class="h-10 w-10 rounded-full object-cover "
                                             src="{{ Auth::user()->profile_photo_url }}"
                                             alt="{{ Auth::user()->name }}" />
-
                                     </div>
 
                                     <div class="col-span-8 flex items-center">
                                         <textarea wire:model="contenidoComentario"
                                             class="auto-expand block w-full rounded-md border-0 py-1.5 text-gray-900 dark:text-gray-100 dark:bg-gray-900 shadow-sm ring-1 ring-inset ring-indigo-300 dark:ring-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 tracking-widest"
                                             rows="1" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"></textarea>
-
                                     </div>
 
                                     <div class="col-span-1 flex justify-center">
@@ -250,11 +224,8 @@
                                                 <path
                                                     d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
                                             </svg>
-
-
                                         </button>
                                     </div>
-
                                 </div>
                                 {{-- @endif --}}
                             </div>
