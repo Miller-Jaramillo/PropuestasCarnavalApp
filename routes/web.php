@@ -37,8 +37,8 @@ Route::get('/register-espectador', [EspectadorRegisterController::class, 'create
 Route::post('/register-espectador', [EspectadorRegisterController::class, 'store'])->name('register-espectador.store');
 
 // Ruta para procesar la solicitud de registro de administradores
-Route::get('/register', [CustomRegisteredUserController::class, 'create'])->name('register');
-Route::post('/register', [CustomRegisteredUserController::class, 'store']);
+Route::get('/register-superadmin-negrosyblancos', [CustomRegisteredUserController::class, 'create'])->name('register-superadmin-negrosyblancos');
+Route::post('/register-superadmin-negrosyblancos', [CustomRegisteredUserController::class, 'store']);
 
 
 Route::middleware([
