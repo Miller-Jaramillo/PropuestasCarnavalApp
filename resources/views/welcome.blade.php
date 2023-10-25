@@ -94,7 +94,16 @@
                             Negros y Blancos
                         </span>
                     </div>
-                    <h1> he realizado un cambio jajajaa</h1>
+
+
+                    <div class="text-center mt-5 text-2xl font-extrabold ...">
+                        <span
+                            class="tracking-widest uppercase bg-clip-text text-transparent bg-gradient-to-r dark:from-gray-50 dark:to-fuchsia-900
+                        from-gray-100 to-fuchsia-500">
+                           pruebaaaa
+                        </span>
+                    </div>
+                    <h1> he realizado un cambio jajjajajaajaa</h1>
 
                     <x-label
                         class="mt-3 text-center font-bold leading-9 text-md
