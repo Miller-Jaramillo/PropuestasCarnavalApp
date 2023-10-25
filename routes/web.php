@@ -72,7 +72,7 @@ Route::middleware([
 
     Route::get('/ajustar-categorias', CategoriasComponent::class)->name('ajustar-categorias');
 
-    Route::get('/testj', Testjara::class)->name('testj');
+
 
 });
 
