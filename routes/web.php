@@ -13,6 +13,7 @@ use App\Http\Livewire\Administrador\PropuestasAdmin;
 use App\Http\Livewire\PropuestasParticipante;
 use App\Http\Livewire\PropuestasPublicadas;
 use App\Http\Livewire\ShowPropuestas;
+use App\Http\Livewire\Testjara;
 use App\Http\Livewire\UsersTable;
 use Illuminate\Support\Facades\Route;
 
@@ -70,6 +71,8 @@ Route::middleware([
     ->name('show-propuestas');
 
     Route::get('/ajustar-categorias', CategoriasComponent::class)->name('ajustar-categorias');
+
+    Route::get('/testj', Testjara::class)->name('testj');
 
 });
 

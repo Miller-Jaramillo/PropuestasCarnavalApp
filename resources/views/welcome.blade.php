@@ -94,6 +94,7 @@
                             Negros y Blancos
                         </span>
                     </div>
+                    <h1> he realizado un cambio jajajaa</h1>
 
                     <x-label
                         class="mt-3 text-center font-bold leading-9 text-md
