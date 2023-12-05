@@ -6,14 +6,9 @@
         </h2>
     </x-slot>
 
-
-
     <x-label class="flex justify-center mt-2 dark:text-blue-500 font-extrabold  uppercase tracking-widest text-xs ">
-        <span class="bg-gradient-text-3">✨ Propuestas para el carnaval de negros y blancos ✨</span>
+        <span class="text-gray-900 dark:text-gray-100">✨ Propuestas para el carnaval de negros y blancos ✨</span>
     </x-label>
-
-
-
 
 
     @if ($propuestas->count())
@@ -127,7 +122,7 @@
                                     Descripcion</x-label>
 
                                 <div
-                                    class="text-xs font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest">
+                                    class="text-xs  text-justify  font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest">
                                     <x-label for="">
                                         {{ $propuesta->descripcion }}
                                     </x-label>

@@ -1,3 +1,4 @@
+
 <div wire:poll.5000ms>
     <!-- Resto de tu código de vista -->
     <x-slot name="header">
@@ -5,7 +6,6 @@
             {{ __('Usuarios') }}
         </h2>
     </x-slot>
-
 
     <div class="py-5">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 sm:px-6">
@@ -431,6 +431,8 @@
                             </button>
                         </div>
 
+
+
                         <x-label
                             class="text-sm font-semibold leading-6 dark:text-gray-100  text-gray-900 tracking-widest uppercase ">
                             <b>Estadisticas de registro</b>
@@ -488,6 +490,7 @@
 
     </div>
 
+
 </div>
 
 
@@ -537,3 +540,13 @@
         fill: rgb(218, 165, 32);
     }
 </style>
+
+
+
+
+
+
+
+
+
+
