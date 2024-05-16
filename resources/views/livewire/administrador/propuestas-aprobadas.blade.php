@@ -213,8 +213,6 @@
                         </div>
 
                         <div class=" bg-white dark:bg-gray-900 overflow-hidden shadow-xl  sm:rounded-xl rounded-xl border border-b-indigo-400 border-l-indigo-400 border border-t-sky-400 border-r-sky-400 dark:border-b-indigo-900 dark:border-l-indigo-900 dark:border-t-sky-900 dark:border-r-sky-900">
-                        <div class="flex justify-center">
-                        </div>
                             <div class="modal-content">
 
                                 <div class=" max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 sm:px-6 py-5">

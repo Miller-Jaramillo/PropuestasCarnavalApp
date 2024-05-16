@@ -183,7 +183,7 @@
                 <div class="bg-white dark:bg-gray-900 overflow-hidden shadow-xl sm:rounded-lg rounded-md">
 
                     @if ($users->count())
-                        <table class="w-full md:w-auto min-w-full ">
+                        <tab    le class="w-full md:w-auto min-w-full ">
                             <thead class="border-b dark:border-indigo-800 border-indigo-500">
                                 <tr>
                                     <th

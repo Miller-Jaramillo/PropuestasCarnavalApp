@@ -26,8 +26,8 @@
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @livewire('navigation-menu')
 
-        <!-- Page Heading -->
-        @if (isset($header))
+            <!-- Page Heading -->
+             @if (isset($header))
             <header class="bg-white dark:bg-gray-800 shadow">
                 <div class="grid grid-cols-2  max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 ">
 
@@ -46,7 +46,7 @@
 
                 </div>
             </header>
-        @endif
+              @endif
 
 
             <!-- Page Content -->
