@@ -41,12 +41,8 @@ Si deseas contribuir al proyecto, sigue estos pasos:
 
 ## Créditos
 
-Desarrollado por [Tu Nombre](https://github.com/tu_usuario).
+Desarrollado por [Miller Jaramillo](https://github.com/tu_usuario).
 
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE.md](LICENSE) para más detalles.
-
----
-
-Por supuesto, asegúrate de personalizar este README con la información específica de tu aplicación y ajustarla según tus necesidades.
