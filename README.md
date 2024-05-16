@@ -11,8 +11,8 @@ Este proyecto es una aplicación web desarrollada en Laravel para la gestión de
 - **Notificaciones:** La aplicación envía notificaciones automáticas por correo electrónico a los usuarios cuando hay cambios en el estado de sus propuestas.
 - **Feed de Noticias:** Las propuestas aprobadas por los evaluadores son publicadas autamitacamente en feed de noticias de la app, los demas participantes pueden reaccionar a estas publicaciones y dejar sus comentarios.
 
-![Imagen](https://raw.githubusercontent.com/Miller-Jaramillo/PropuestasCarnavalApp/main/public/img/corpocarnaval3.png)
-![Imagen](https://raw.githubusercontent.com/Miller-Jaramillo/PropuestasCarnavalApp/main/public/img/corpocarnaval4.png)
+![Imagen](https://raw.githubusercontent.com/Miller-Jaramillo/PropuestasCarnavalApp/main/public/img/corpocarnaval5.png)
+
 ## Tecnologías Utilizadas
 
 - **Laravel:** El framework PHP utilizado para el desarrollo del backend de la aplicación.
