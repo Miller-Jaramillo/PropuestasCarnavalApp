@@ -1,7 +1,8 @@
 # Sistema de Gestión de Propuestas para Corpocarnaval
 
 Este proyecto es una aplicación web desarrollada en Laravel para la gestión de propuestas en carnavales, específicamente para Corpocarnaval de San Juan de Pasto. La aplicación permite a los usuarios registrar, gestionar y evaluar las propuestas presentadas para el evento.
-
+![Imagen](https://raw.githubusercontent.com/Miller-Jaramillo/v44/main/public/img/corpocarnaval1.png)
+![Imagen](https://raw.githubusercontent.com/Miller-Jaramillo/v44/main/public/img/corpocarnaval2.png)
 ## Características
 
 - **Registro de Propuestas:** Los usuarios pueden registrar nuevas propuestas, incluyendo detalles como nombre del grupo, descripción, categoría, y archivos adjuntos como imágenes o videos.
@@ -9,6 +10,9 @@ Este proyecto es una aplicación web desarrollada en Laravel para la gestión de
 - **Evaluación de Propuestas:** Los evaluadores pueden acceder a las propuestas asignadas, evaluarlas según criterios predefinidos y dejar comentarios para los proponentes.
 - **Notificaciones:** La aplicación envía notificaciones automáticas por correo electrónico a los usuarios cuando hay cambios en el estado de sus propuestas.
 - **Feed de Noticias:** Las propuestas aprobadas por los evaluadores son publicadas autamitacamente en feed de noticias de la app, los demas participantes pueden reaccionar a estas publicaciones y dejar sus comentarios.
+
+![Imagen](https://raw.githubusercontent.com/Miller-Jaramillo/v44/main/public/img/corpocarnaval3.png)
+![Imagen](https://raw.githubusercontent.com/Miller-Jaramillo/v44/main/public/img/corpocarnaval4.png)
 
 ## Tecnologías Utilizadas
 
