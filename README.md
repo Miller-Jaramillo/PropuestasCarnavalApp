@@ -41,7 +41,7 @@ Si deseas contribuir al proyecto, sigue estos pasos:
 
 ## Créditos
 
-Desarrollado por [Miller Jaramillo](https://github.com/tu_usuario).
+Desarrollado por [Miller Jaramillo](https://github.com/tu_usuario) y Angie Cordoba.
 
 ## Licencia
 
